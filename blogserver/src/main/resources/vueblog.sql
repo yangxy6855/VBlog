@@ -2,9 +2,9 @@
 Date: 2017-12-26 18:36:12
 */
 
-CREATE DATABASE `vueblog2` DEFAULT CHARACTER SET utf8;
+#CREATE DATABASE `vueblog` DEFAULT CHARACTER SET utf8;
 
-USE `vueblog2`;
+USE `vueblog`;
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -272,11 +272,11 @@ INSERT INTO `user` VALUES ('20', 'fengqingyang', '风清扬', '202cb962ac59075b9
 -- View structure for pvview
 -- ----------------------------
 DROP VIEW IF EXISTS `pvview`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `pvview` AS select sum(pv) as pv,uid from pv group by uid ;
+CREATE ALGORITHM=UNDEFINED   VIEW `pvview` AS select sum(pv) as pv,uid from pv group by uid ;
 
 -- ----------------------------
 -- View structure for totalpvview
 -- ----------------------------
 DROP VIEW IF EXISTS `totalpvview`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `totalpvview` AS select sum(pageView) as totalPv,uid from article a group by uid ;
+CREATE ALGORITHM=UNDEFINED   VIEW `totalpvview` AS select sum(pageView) as totalPv,uid from article a group by uid ;
 SET FOREIGN_KEY_CHECKS=1;
